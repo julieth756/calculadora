@@ -2,40 +2,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-
-    <f:view contentType="text/html">
-        <h:head>
-            <title>Calculadora</title>
-        </h:head>
-        <h:body>
-            <p:panelGrid columns="4">         
-                <f:facet name="header">
-                    <p:column colspan="12"><p:inputTextarea rows="3" cols="15" /></p:column>
-                </f:facet>
-                <p:commandButton value="1" id="uno"/>
-                <p:commandButton value="2" id="dos"/>
-                <p:commandButton value="3" id="tres"/>
-                <p:commandButton value="+" id="mas"/>
-                
-                <p:commandButton value="4" id="cuatro"/>
-                <p:commandButton value="5" id="cinco"/>
-                <p:commandButton value="6" id="seis"/>
-                <p:commandButton value="-" id="menos"/>
-                
-                <p:commandButton value="7" id="siete"/>
-                <p:commandButton value="8" id="ocho"/>
-                <p:commandButton value="9" id="nueve"/>
-                <p:commandButton value="X" id="multiplicacion"/>
-                
-                <p:commandButton value="." id="punto"/>
-                <p:commandButton value="0" id="cero"/>
-                <p:commandButton value="=" id="igual"/>
-                <p:commandButton value="/" id="division"/>
+    <h:head>
+        <title>CALCULADORA</title>
+    </h:head>
+    <h:body>
+       <h:form class="Calc">
+           <p:panelGrid columns="1">
+               <h:inputTextarea id="pantalla" style="width: 265px" value="#{beanCalc.operador}" readonly="true"/>
             </p:panelGrid>
-        </h:body>
-    </f:view>
+            <br/>
+            <p:panelGrid columns="4">
+                <p:commandButton value="1" id="nume1" style="width: 50px" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="2" id="nume2" style="width: 50px" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="3" id="nume3" style="width: 50px" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="+" id="numes" style="width: 50px" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                
+                <p:commandButton value="4" style="width: 50px" id="nume4" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="5" style="width: 50px" id="nume5" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="6" style="width: 50px" id="nume6" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="-" style="width: 50px" id="numer" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                
+                <p:commandButton value="7" style="width: 50px" id="nume7" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="8" style="width: 50px" id="nume8" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="9" style="width: 50px" id="nume9" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="X" style="width: 50px" id="numem" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                
+                <p:commandButton value="c" style="width: 50px" id="numei" actionListener="#{beanCalc.reset}" update="pantalla"/>
+                <p:commandButton value="0" style="width: 50px" id="nume0" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="." style="width: 50px" id="numep" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="/" style="width: 50px" id="numed" actionListener="#{beanCalc.numero}" update="pantalla"/>    
+        </p:panelGrid>
+        <p:panelGrid columns="1">
+                <p:commandButton value="=" style="width: 265px" id="numee" actionListener="#{beanCalc.numero}" update="pantalla"/>
+        </p:panelGrid>
+       </h:form>
+    </h:body>
 </html>
-
