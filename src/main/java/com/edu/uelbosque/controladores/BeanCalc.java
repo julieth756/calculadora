@@ -15,7 +15,7 @@ import javax.faces.event.ActionEvent;
 @ManagedBean
 @ViewScoped
 public class BeanCalc{
-    private String numeros="";
+
     private String operador;
     private String signo;
 
@@ -42,13 +42,7 @@ public class BeanCalc{
  
     public void numero(ActionEvent e){
         String identif = e.getComponent().getId().substring(3);
-        if(identif=="p"){
-            numeros+=".";
-            this.operador+=numeros;
-        }else{
-           numeros=numeros+identif;
-           this.operador+=numeros; 
-        }
+        this.operador+=identif; 
     }
 
     public void signo(ActionEvent e){
@@ -71,7 +65,7 @@ public class BeanCalc{
                 signo = "/";
                 break;
             default:
-                this.numeros +="";
+                this.operador+="";
         }
     }
     
@@ -83,28 +77,28 @@ public class BeanCalc{
         
                 switch(signo){
                 case "+":
-                    union = numeros.split("\\+");
+                    union = operador.split("\\+");
                     nume1 = Double.valueOf(union[0]);
                     nume2 = Double.valueOf(union[1]);
                     resultado = nume1 + nume2;
                     this.operador = String.valueOf(resultado);
                     break;
                 case "-":
-                    union = numeros.split("-");
+                    union = operador.split("-");
                     nume1 = Double.valueOf(union[0]);
                     nume2 = Double.valueOf(union[1]);
                     resultado = nume1 - nume2;
                     this.operador = String.valueOf(resultado);
                     break;
                 case "*":
-                    union = numeros.split("\\*");
+                    union = operador.split("\\*");
                     nume1 = Double.valueOf(union[0]);
                     nume2 = Double.valueOf(union[1]);
                     resultado = nume1 * nume2;
                     this.operador = String.valueOf(resultado);
                     break;
                 case "/":
-                    union = numeros.split("/");
+                    union = operador.split("/");
                     nume1 = Double.valueOf(union[0]);
                     nume2 = Double.valueOf(union[1]);
                     resultado = nume1 / nume2;
