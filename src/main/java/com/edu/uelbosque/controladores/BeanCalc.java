@@ -15,6 +15,7 @@ import javax.faces.event.ActionEvent;
 @ManagedBean
 @ViewScoped
 public class BeanCalc{
+    private String numeros="";
     private String operador;
     private String signo;
 
@@ -39,16 +40,80 @@ public class BeanCalc{
         this.operador = operador;
     }
  
-    public void operacion(){
-    
+    public void numero(ActionEvent e){
+        String identif = e.getComponent().getId().substring(3);
+        if(identif=="p"){
+            numeros+=".";
+            this.operador+=numeros;
+        }else{
+           numeros=numeros+identif;
+           this.operador+=numeros; 
+        }
     }
 
-    public void numero(ActionEvent e){
-        String identif = e.getComponent().getId();
-        String concatena = identif.substring(identif.indexOf("nume")+4);
-        this.operador +=concatena;
+    public void signo(ActionEvent e){
+        String identif = e.getComponent().getId().substring(3);
+         switch(identif){
+            case "s":
+                this.operador +="+";
+                signo = "+";
+                break;
+            case "r":
+                this.operador +="-";
+                signo = "-";
+                break;
+            case "m":
+                this.operador +="*";
+                signo = "*";
+                break;
+            case "d":
+                this.operador +="/";
+                signo = "/";
+                break;
+            default:
+                this.numeros +="";
+        }
     }
     
+    public void resultado(){
+        String union[];
+                double resultado;
+                double nume1 = 0.0;
+                double nume2 = 0.0;
+        
+                switch(signo){
+                case "+":
+                    union = numeros.split("\\+");
+                    nume1 = Double.valueOf(union[0]);
+                    nume2 = Double.valueOf(union[1]);
+                    resultado = nume1 + nume2;
+                    this.operador = String.valueOf(resultado);
+                    break;
+                case "-":
+                    union = numeros.split("-");
+                    nume1 = Double.valueOf(union[0]);
+                    nume2 = Double.valueOf(union[1]);
+                    resultado = nume1 - nume2;
+                    this.operador = String.valueOf(resultado);
+                    break;
+                case "*":
+                    union = numeros.split("\\*");
+                    nume1 = Double.valueOf(union[0]);
+                    nume2 = Double.valueOf(union[1]);
+                    resultado = nume1 * nume2;
+                    this.operador = String.valueOf(resultado);
+                    break;
+                case "/":
+                    union = numeros.split("/");
+                    nume1 = Double.valueOf(union[0]);
+                    nume2 = Double.valueOf(union[1]);
+                    resultado = nume1 / nume2;
+                    this.operador = String.valueOf(resultado);
+                    break;                
+            default:
+                    this.operador = "";
+        }
+    }
     public void reset(){
       setOperador(" ");  
     }

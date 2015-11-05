@@ -13,28 +13,28 @@
             </p:panelGrid>
             <br/>
             <p:panelGrid columns="4">
-                <p:commandButton value="1" id="nume1" style="width: 50px" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="2" id="nume2" style="width: 50px" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="3" id="nume3" style="width: 50px" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="+" id="numes" style="width: 50px" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="1" style="width: 50px" id="num1" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="2" style="width: 50px" id="num2" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="3" style="width: 50px" id="num3" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="+" style="width: 50px" id="nums" actionListener="#{beanCalc.signo}" update="pantalla"/>
                 
-                <p:commandButton value="4" style="width: 50px" id="nume4" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="5" style="width: 50px" id="nume5" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="6" style="width: 50px" id="nume6" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="-" style="width: 50px" id="numer" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="4" style="width: 50px" id="num4" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="5" style="width: 50px" id="num5" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="6" style="width: 50px" id="num6" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="-" style="width: 50px" id="numr" actionListener="#{beanCalc.signo}" update="pantalla"/>
                 
-                <p:commandButton value="7" style="width: 50px" id="nume7" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="8" style="width: 50px" id="nume8" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="9" style="width: 50px" id="nume9" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="X" style="width: 50px" id="numem" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="7" style="width: 50px" id="num7" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="8" style="width: 50px" id="num8" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="9" style="width: 50px" id="num9" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="X" style="width: 50px" id="numm" actionListener="#{beanCalc.signo}" update="pantalla"/>
                 
-                <p:commandButton value="c" style="width: 50px" id="numei" actionListener="#{beanCalc.reset}" update="pantalla"/>
-                <p:commandButton value="0" style="width: 50px" id="nume0" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="." style="width: 50px" id="numep" actionListener="#{beanCalc.numero}" update="pantalla"/>
-                <p:commandButton value="/" style="width: 50px" id="numed" actionListener="#{beanCalc.numero}" update="pantalla"/>    
+                <p:commandButton value="c" style="width: 50px" id="numc" actionListener="#{beanCalc.reset}" update="pantalla"/>
+                <p:commandButton value="0" style="width: 50px" id="num0" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="." style="width: 50px" id="nump" actionListener="#{beanCalc.numero}" update="pantalla"/>
+                <p:commandButton value="/" style="width: 50px" id="numd" actionListener="#{beanCalc.signo}" update="pantalla"/>    
         </p:panelGrid>
         <p:panelGrid columns="1">
-                <p:commandButton value="=" style="width: 265px" id="numee" actionListener="#{beanCalc.numero}" update="pantalla"/>
+            <p:commandButton value="=" style="width: 265px" id="numi" actionListener="#{beanCalc.signo}" update="pantalla"/>
         </p:panelGrid>
        </h:form>
     </h:body>
