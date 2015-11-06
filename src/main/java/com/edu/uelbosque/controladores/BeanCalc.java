@@ -64,13 +64,16 @@ public class BeanCalc{
                 this.operador +="/";
                 signo = "/";
                 break;
+            case "p":
+                this.operador +=".";
+                break;
             default:
                 this.operador+="";
         }
     }
     
     public void resultado(){
-        String union[];
+                String union[];
                 double resultado;
                 double nume1 = 0.0;
                 double nume2 = 0.0;
